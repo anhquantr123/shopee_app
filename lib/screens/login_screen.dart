@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopee_app/core/app_config.dart';
 import 'package:shopee_app/widgets/auth_appbar.dart';
+import 'package:shopee_app/widgets/auth_btn.dart';
 import 'package:shopee_app/widgets/auth_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -50,21 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 15,
               ),
-              Container(
-                decoration: BoxDecoration(
-                    color: AppConfig.primaryColor,
-                    borderRadius: BorderRadius.circular(10)),
-                width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Đăng nhập",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.transparent,
-                      shadowColor: Colors.transparent),
-                ),
+              AuthBtn(
+                backgroundColor: AppConfig.primaryColor,
+                label: "Đăng nhập",
+                textColor: Colors.white,
               ),
               SizedBox(
                 height: 10,
@@ -87,6 +77,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text("  Hoặc  "),
                 Expanded(child: Divider()),
               ]),
+              SizedBox(
+                height: 10,
+              ),
+              AuthBtn(label: "Google"),
+              SizedBox(
+                height: 10,
+              ),
+              AuthBtn(label: "Facebook"),
               Spacer(),
               Text("Bạn không có tài khoản? Đăng ký!")
             ],

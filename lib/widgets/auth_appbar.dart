@@ -3,8 +3,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shopee_app/core/app_config.dart';
 
 class AuthAppBar extends StatefulWidget implements PreferredSizeWidget {
+  final bool isShowStore;
   final String label;
-  const AuthAppBar({super.key, required this.label});
+  const AuthAppBar({super.key, required this.label, this.isShowStore = true});
 
   @override
   State<AuthAppBar> createState() => _AuthAppBarState();
@@ -24,13 +25,15 @@ class _AuthAppBarState extends State<AuthAppBar> {
           },
           child: const Icon(Iconsax.arrow_left)),
       actions: [
-        GestureDetector(
-          onTap: () {},
-          child: Icon(
-            Iconsax.shop_add,
-            color: AppConfig.primaryColor,
-          ),
-        ),
+        widget.isShowStore
+            ? GestureDetector(
+                onTap: () {},
+                child: Icon(
+                  Iconsax.shop_add,
+                  color: AppConfig.primaryColor,
+                ),
+              )
+            : SizedBox.shrink(),
         const SizedBox(
           width: 20,
         ),

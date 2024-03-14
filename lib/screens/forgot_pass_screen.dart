@@ -16,6 +16,7 @@ class _ForgotPassWordScreenState extends State<ForgotPassWordScreen> {
       child: Scaffold(
         appBar: AuthAppBar(
           label: "Gửi lại mật khẩu",
+          isShowStore: false,
         ),
         backgroundColor: Colors.white,
         body: Text("welcome to scfrrnajbdsfhdslif"),
